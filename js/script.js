@@ -21,6 +21,15 @@ function addRSStoDOM(data) {
   content.appendChild(itemsContainer);
 }
 
+var xhr = new XMLHttpRequest();
+xhr.onload = function() {
+  if (xhr.status >=200 && xhr.status < 300) {  
+    console.log("Success!")
+  } else { 
+    console.log("The request failed")
+  }
+}
+
 let addFeedButton = document.getElementById("add-feed");
 let newRSSInput = document.getElementById("rss-input");
 

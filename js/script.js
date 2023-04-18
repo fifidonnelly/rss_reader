@@ -31,7 +31,7 @@ xhr.onload = function() {
   }
 }
 
-var content = document.getElementsByTagName('main'[0])
+var content = document.getElementsByTagName('main')[0]
 
 let addFeedButton = document.getElementById("add-feed");
 let newRSSInput = document.getElementById("rss-input");

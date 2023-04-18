@@ -24,11 +24,14 @@ function addRSStoDOM(data) {
 var xhr = new XMLHttpRequest();
 xhr.onload = function() {
   if (xhr.status >=200 && xhr.status < 300) {  
+    json = JSON.parse(xhr.responseText)
     console.log("Success!")
   } else { 
     console.log("The request failed")
   }
 }
+
+var content = document.getElementsByTagName('main'[0])
 
 let addFeedButton = document.getElementById("add-feed");
 let newRSSInput = document.getElementById("rss-input");
@@ -36,7 +39,7 @@ let newRSSInput = document.getElementById("rss-input");
 function onAddRSSClicked(event) {
   let URL = newRSSInput.value;
   newRSSInput.value = "";
-
+ 
   xhr.open('GET', 'https://api.rss2json.com/v1/api.json?rss_url=' + URL);
   xhr.send();
 }
